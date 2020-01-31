@@ -1,0 +1,18 @@
+<div class="Home">
+  <div class="Home__ContainerTitle">
+    <h1 class="Home__ContainerTitle-Title">Image 360</h1>
+  </div>
+
+  <UploadImage />
+
+  <div class="Home__Miniatures">
+    <Miniature
+      v-for="(imageName, index) in arrayImagesNames"
+      :key="index"
+      :text="imageName"
+      @click.native="setImageSelected(index)"
+    />
+  </div>
+  
+  <Image360 :imageSelected="imageSelected"/>
+</div>

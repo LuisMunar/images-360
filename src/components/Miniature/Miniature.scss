@@ -1,0 +1,26 @@
+.Miniature {
+  padding: .5vw 1vw;
+  margin: .5vw;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: #2980b9;
+  border-radius: .4vw;
+  cursor: pointer;
+
+  &__Text {
+    margin: 0 .2vw 0 0;
+    color: #ecf0f1;
+    font-size: .9vw;
+
+    &-Selected {
+      margin: 0 .2vw 0 0;
+      color: #ecf0f1;
+      font-size: 1vw;
+    }
+  }
+
+  &__Icon {
+    width: 1.2vw;
+  }
+}

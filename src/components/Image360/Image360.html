@@ -1,0 +1,18 @@
+<div class="Image360">
+  <div
+    v-for="(name, index) in imagesNames"
+    :key="index" :id="`${name}${index}`"
+    class="Image360__Image"
+  ></div>
+
+
+  <span>{{ imageSelected }}</span>
+
+
+  <!-- <div class="Image360__Buttons">
+    <button @click="setImages()" class="Image360__Buttons-Button">Set Information</button>
+    <button @click="updateImages()" class="Image360__Buttons-Button">Update Information</button>
+    <button @click="deleteImages()" class="Image360__Buttons-Button">Delete Information</button>
+    <button @click="showImage('../../assets/first-image.jpeg')" class="Image360__Buttons-Button">Change image</button>
+  </div> -->
+</div>

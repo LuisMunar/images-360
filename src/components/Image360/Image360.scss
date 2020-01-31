@@ -1,0 +1,49 @@
+.Image360 {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__ContainerTitle {
+    width: 100%;
+    background-color: #2980b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 42px -24px rgba(0,0,0,0.75);
+    margin: 0 0 2vw 0;
+
+    &-Title {
+      color: #ecf0f1;
+      font-size: 2vw;
+    }
+  }
+
+  &__Image {
+    height: 30vw;
+    width: 60vw;
+    margin: 0 0 2vw 0;
+  }
+
+  &__Buttons {
+    width: 60vw;
+    padding: 1vw;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-Button {
+      background-color: #2980b9;
+      color: #ecf0f1;
+      padding: .5vw 1vw;
+      font-size: .8vw;
+      border: none;
+      outline: none;
+      border-radius: .5vw;
+      cursor: pointer;
+    }
+  }
+}

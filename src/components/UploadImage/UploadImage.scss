@@ -1,0 +1,20 @@
+.UploadImage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__LabelFile {
+    margin: 0 0 2vw 0;
+
+    &-Icon {
+      width: 3vw;
+      cursor: pointer;
+    }
+  }
+
+  &__InputFile{
+    display: none;
+  }
+}
