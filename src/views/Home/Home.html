@@ -14,5 +14,9 @@
     />
   </div>
   
-  <!-- <Image360 :imageSelected="imageSelected"/> -->
+  <Image360
+    v-for="(dataImage, i) in arrayImagesNames"
+    :idCotent="`${dataImage.name}${i}`"
+    :imageSelected="dataImage"
+  />
 </div>

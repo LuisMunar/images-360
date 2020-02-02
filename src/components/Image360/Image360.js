@@ -1,92 +1,83 @@
 import Vue from 'vue'
-import { db, storage } from '../../../firebase'
+import { storage, corsFirebase } from '../../../firebase'
 
 export default Vue.extend({
   name: 'Image360',
 
   props: {
-    imageSelected: {
+    idCotent: {
       type: String
+    },
+    imageSelected: {
+      type: Object
     }
   },
 
-  data: () => ({
-    forlderImage: 'images',
-    corsFirebase: 'https://cors-anywhere.herokuapp.com/',
-    imagesNames: []
-  }),
-
-  async created () {
-    const querySnapshot = await this.getImages()
-    this.imagesNames = await this.getImagesNames(querySnapshot)
-  },
-
-  async mounted () {
+  beforeMount () {
     setTimeout(async () => {
       await this.showImage()
     }, 500)
   },
 
   methods: {
-    // updateImages () {
-    //   db.collection('users').doc('LA').update({
-    //     people: 3000000
-    //   })
-    //   .then((response) => {
-    //     console.log('Document successfully written! ', response)
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error writing document: ', error)
-    //   })
-    // },
-
-    // deleteImages () {
-    //   db.collection('users').doc('6VdZ4ohqOdyY1prMg8Ro').delete()
-    //   .then((response) => {
-    //     console.log('Document successfully written! ', response)
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error writing document: ', error)
-    //   })
-    // },
-
-    getImages () {
-      return db.collection('users').get()
-      .then((querySnapshot) => {
-        return querySnapshot.docs
-      })
-    },
-
-    async getImagesNames (querySnapshot) {
-      let arr = []
-
-      querySnapshot.forEach((doc) => {
-        if (doc.id === 'NameImages') {
-          const collection = JSON.parse(JSON.stringify(doc.data()))
-          arr = collection.name
-        }
-      })
-
-      return arr
-    },
-
     async showImage () {
-      this.imagesNames.forEach(async (name, index) => {
-        var refImage = storage.ref().child(`${this.forlderImage}/${name}`)
-        await refImage.getDownloadURL()
-        .then(async (response) => {
-        this.setDataPennellum(response, name, index)
-      })
+      var refImage = storage.ref().child(`images/${this.imageSelected.name}`)
+      await refImage.getDownloadURL()
+      .then(async (response) => {
+        this.setDataPennellum(response)
       })
     },
 
-    setDataPennellum (url, name, index) {
-      pannellum.viewer(`${name}${index}`, {
+    setDataPennellum (url) {
+      pannellum.viewer(this.idCotent, {
         type: 'equirectangular',
-        panorama: `${this.corsFirebase}${url}`,
+        panorama: `${corsFirebase}${url}`,
         autoLoad: true,
-        title: name,
+        title: this.imageSelected.name,
       })
     }
   }
 })
+
+// async getImagesNames (querySnapshot) {
+//   let arr = []
+
+//   querySnapshot.forEach((doc) => {
+//     if (doc.id === 'NameImages') {
+//       const collection = JSON.parse(JSON.stringify(doc.data()))
+//       arr = collection.name
+//     }
+//   })
+  
+//   return arr
+// },
+
+// getImages () {
+//   return db.collection('users').get()
+//   .then((querySnapshot) => {
+//     console.log('ONE: ', querySnapshot)
+//     return querySnapshot.docs
+//   })
+// },
+
+// updateImages () {
+//   db.collection('users').doc('LA').update({
+//     people: 3000000
+//   })
+//   .then((response) => {
+//     console.log('Document successfully written! ', response)
+//   })
+//   .catch((error) => {
+//     console.error('Error writing document: ', error)
+//   })
+// },
+
+// deleteImages () {
+//   db.collection('users').doc('6VdZ4ohqOdyY1prMg8Ro').delete()
+//   .then((response) => {
+//     console.log('Document successfully written! ', response)
+//   })
+//   .catch((error) => {
+//     console.error('Error writing document: ', error)
+//   })
+// },
