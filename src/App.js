@@ -11,7 +11,6 @@ export default Vue.extend({
   },
 
   created () {
-    // this.setArrayImagesNames()
     this.getImages()
   },
 
@@ -24,7 +23,7 @@ export default Vue.extend({
         querySnapshot.forEach((doc) => {
           if (doc.id === 'NameImages') {
             const collection = JSON.parse(JSON.stringify(doc.data()))
-            this.setArrayImagesNames({arrayImageName: collection.name})
+            collection.data === undefined ? this.setArrayImagesNames([]) : this.setArrayImagesNames(collection.data)
           }
         })
       })

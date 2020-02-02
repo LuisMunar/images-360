@@ -1,20 +1,39 @@
-.UploadImage {
+.uploadimage {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  &__LabelFile {
+  &__inputdescription {
+    padding: .5vw 1vw;
+    border: none;
+    outline: none;
+    font-size: .9vw;
+    border-bottom: solid .08vw #2980b9;
+  }
+
+  &__labelfile {
     margin: 0 0 2vw 0;
 
-    &-Icon {
+    &--text {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c3e50;
+      font-size: .9vw;
+      height: 3vw;
+    }
+
+    &--icon {
+      height: 3vw;
       width: 3vw;
       cursor: pointer;
     }
   }
 
-  &__InputFile{
+  &__inputfile{
     display: none;
   }
 }

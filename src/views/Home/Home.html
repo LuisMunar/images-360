@@ -9,10 +9,10 @@
     <Miniature
       v-for="(imageName, index) in arrayImagesNames"
       :key="index"
-      :text="imageName"
+      :text="imageName.name"
       @click.native="setImageSelected(index)"
     />
   </div>
   
-  <Image360 :imageSelected="imageSelected"/>
+  <!-- <Image360 :imageSelected="imageSelected"/> -->
 </div>

@@ -1,7 +1,10 @@
-<div class="UploadImage">
-  <label class="UploadImage__LabelFile" for="inputFile">
-    <img src="../../assets/upload.svg" alt="Upload" class="UploadImage__LabelFile-Icon">
+<div class="uploadimage">
+  <input placeholder="Description" v-model="imageDescription" type="text" @input="handlerInputText($event)" class="uploadimage__inputdescription">
+
+  <label class="uploadimage__labelfile" for="inputFile">
+    <span v-if="uploadImageManager" class="uploadimage__labelfile--text">Add a description to the image</span>
+    <img v-if="!uploadImageManager" src="../../assets/upload.svg" alt="Upload" class="uploadimage__labelfile--icon">
   </label>
 
-  <input type="file" @change="uploadImage($event)" id="inputFile" class="UploadImage__InputFile">
+  <input :disabled="uploadImageManager" type="file" @change="uploadImage($event)" id="inputFile" class="uploadimage__inputfile">
 </div>

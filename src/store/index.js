@@ -14,11 +14,11 @@ export default new Vuex.Store({
   },
   mutations: {
     setArrayImagesNames (state, payload) {
-      state.arrayImagesNames = payload.arrayImageName
+      state.arrayImagesNames = payload
     },
 
     addImageName (state, payload) {
-      state.arrayImagesNames.push(payload.imageName)
+      state.arrayImagesNames.push(payload)
     },
 
     popupManager(state, payload) {
