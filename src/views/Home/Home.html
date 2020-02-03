@@ -5,7 +5,7 @@
 
   <UploadImage />
 
-  <span v-if="arrayImagesNames.length > 0">Click on the button with the name of the image to be deleted</span>
+  <span v-if="arrayImagesNames.length > 0" class="home__textwithoutimages">Click on the button with the name of the image to be deleted</span>
   <div class="home__miniatures">
     <Miniature
       v-for="(imageName, index) in arrayImagesNames"

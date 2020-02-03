@@ -37,3 +37,27 @@
     display: none;
   }
 }
+
+@media (max-width: 1024px) {
+  .uploadimage {
+    &__inputdescription {
+      padding: 1vw 4vw;
+      font-size: 4vw;
+      border-bottom-width: .1vw;
+    }
+  
+    &__labelfile {
+      margin: 0 0 2vw 0;
+  
+      &--text {
+        font-size: 4vw;
+        height: 10vw;
+      }
+  
+      &--icon {
+        height: 10vw;
+        width: 10vw;
+      }
+    }
+  }
+}

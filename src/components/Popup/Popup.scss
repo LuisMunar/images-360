@@ -1,4 +1,4 @@
-.Popup {
+.popup {
   position: absolute;
   right: 1vw;
   bottom: 1vw;
@@ -10,16 +10,34 @@
   background-color: #2c3e50;
   border-radius: 1vw 0 0 0;
 
-  &__Title {
+  &__title {
     margin: 0 0 1vw 0;
     color: #ecf0f1;
     font-size: 1.2vw;
     font-weight: 400;
   }
 
-  &__Text {
+  &__text {
     color: #ecf0f1;
     font-size: .9vw;
     font-weight: 300;
+  }
+}
+
+@media (max-width: 1024px) {
+  .popup {
+    right: 0vw;
+    bottom: 0vw;
+    padding: 4vw 3vw 6vw 3vw;
+    border-radius: 4vw 0 0 0;
+  
+    &__title {
+      font-size: 5vw;
+      margin: 0 0 6vw 0;
+    }
+  
+    &__text {
+      font-size: 4vw;
+    }
   }
 }

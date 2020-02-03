@@ -18,3 +18,19 @@
     margin: 4vw 0 1vw 0;
   }
 }
+
+@media (max-width: 1024px) {
+  .image360 {
+    &__image {
+      height: 50vw;
+      width: 96vw;
+      margin: 0 0 2vw 0;
+    }
+  
+    &__description {
+      font-size: 5vw;
+      font-weight: 300;
+      margin: 10vw 0 4vw 0;
+    }
+  }
+}

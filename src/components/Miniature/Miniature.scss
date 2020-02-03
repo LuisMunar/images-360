@@ -19,3 +19,18 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .miniature {
+    &__button {
+      font-size: 4vw;
+      border-radius: 1vw;
+      padding: 1vw 2vw;
+      margin: 1vw;
+  
+      &:active {
+        border-width: 2vw;
+      }
+    }
+  }
+}

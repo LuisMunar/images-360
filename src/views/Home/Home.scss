@@ -33,3 +33,25 @@
     font-size: 3vw;
   }
 }
+
+@media (max-width: 1024px) {
+  .home {
+    &__containertitle {
+      margin: 0 0 10vw 0;
+  
+      &-title {
+        color: #ecf0f1;
+        font-size: 6vw;
+      }
+    }
+  
+    &__miniatures {
+      width: 90vw;
+    }
+  
+    &__textwithoutimages {
+      font-size: 6vw;
+      padding: 4vw;
+    }
+  }
+}
