@@ -1,11 +1,11 @@
-<div class="Home">
-  <div class="Home__ContainerTitle">
-    <h1 class="Home__ContainerTitle-Title">Image 360</h1>
+<div class="home">
+  <div class="home__containertitle">
+    <h1 class="home__containertitle-title">Image 360</h1>
   </div>
 
   <UploadImage />
 
-  <div class="Home__Miniatures">
+  <div class="home__miniatures">
     <Miniature
       v-for="(imageName, index) in arrayImagesNames"
       :key="index"
@@ -14,6 +14,8 @@
       @click.native="setImageSelected(index)"
     />
   </div>
+
+  <span v-if="arrayImagesNames.length <= 0" class="home__textwithoutimages">Upload your first image</span>
   
   <Image360
     v-for="(dataImage, i) in arrayImagesNames"
