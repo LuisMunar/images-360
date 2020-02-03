@@ -10,6 +10,7 @@
       v-for="(imageName, index) in arrayImagesNames"
       :key="index"
       :text="imageName.name"
+      :idButton="index"
       @click.native="setImageSelected(index)"
     />
   </div>
