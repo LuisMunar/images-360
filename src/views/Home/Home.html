@@ -5,6 +5,7 @@
 
   <UploadImage />
 
+  <span v-if="arrayImagesNames.length > 0">Click on the button with the name of the image to be deleted</span>
   <div class="home__miniatures">
     <Miniature
       v-for="(imageName, index) in arrayImagesNames"
@@ -16,7 +17,6 @@
   </div>
 
   <span v-if="arrayImagesNames.length <= 0" class="home__textwithoutimages">Upload your first image</span>
-  
   <Image360
     v-for="(dataImage, i) in arrayImagesNames"
     :idCotent="`${dataImage.name}${i}`"
