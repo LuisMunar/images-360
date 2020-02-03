@@ -40,6 +40,7 @@ export default Vue.extend({
       .then(async (response) => {
         this.popupManager({title: 'Success', text: 'Image uploaded successfully', status: true})
         this.imageDescription = ''
+        this.uploadImageManager = true
         this.closePopupManager()
       })
       .catch((error) => {
